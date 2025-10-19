@@ -26,7 +26,7 @@ Generar seis gráficos representativos que permitan visualizar distintos aspecto
 - ventas totales por metodo de pago
 - ventas totales por paises
 - Promedio Ventas-Idioma
-- ventas_totales-membresia
+- ventas totales por tipo de membresia
 - gastos totales por edad
 - uso de bytes por tipo de protocolo
 
