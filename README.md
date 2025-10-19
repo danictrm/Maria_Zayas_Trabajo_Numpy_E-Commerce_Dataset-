@@ -22,7 +22,13 @@ NumPy
 Matplotlib  
 
 Resultados esperados  
-Generar seis gráficos representativos que permitan visualizar distintos aspectos del dataset:  
+Generar seis gráficos representativos que permitan visualizar distintos aspectos del dataset: 
+- ventas totales por metodo de pago
+- ventas totales por paises
+-
+-
+- gastos totales por edad
+- uso de bytes por tipo de protocolo
 
 
 El trabajo permitirá poner en práctica el uso de NumPy y Matplotlib en un contexto real, analizando datos de un sistema de comercio electrónico y extrayendo conclusiones basadas en los resultados obtenidos.
