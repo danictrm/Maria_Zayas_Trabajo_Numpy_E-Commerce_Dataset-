@@ -1,0 +1,46 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Cargar y normalizar columnas
+df = pd.read_csv('E-commerce Website Logs.csv')
+df.columns = [col.strip().lower().replace(' ', '_') for col in df.columns]
+
+# Agrupar por tipo de membresía y calcular ventas totales
+membership_grouped = df.groupby('membership')['sales'].sum().sort_values(ascending=False)
+
+# Eliminar categorías con ventas cero (opcional)
+membership_grouped = membership_grouped[membership_grouped > 0]
+
+# Convertir a arrays
+membership_types = membership_grouped.index.to_numpy()
+membership_sales_total = membership_grouped.values
+
+# Crear color degradado
+colors = plt.cm.viridis(np.linspace(0.2, 0.9, len(membership_sales_total)))
+
+# Crear gráfico
+plt.figure(figsize=(10,6))
+bars = plt.bar(membership_types, membership_sales_total, color=colors, edgecolor='black')
+
+# Añadir etiquetas sin bucle
+plt.bar_label(
+    bars,
+    labels=[f'{x:,.0f}' for x in membership_sales_total],
+    padding=5,
+    fontsize=11,
+    fontweight='bold'
+)
+
+# Personalización visual
+plt.title('Ventas Totales por Tipo de Membresía', fontsize=18)
+plt.xlabel('Membresía', fontsize=14)
+plt.ylabel('Ventas Totales', fontsize=14)
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+
+# Guardar como imagen
+plt.savefig('ventas_totales_por_membresia.png')
+
+# Mostrar gráfico
+plt.show()
