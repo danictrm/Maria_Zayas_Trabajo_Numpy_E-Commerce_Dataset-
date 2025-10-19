@@ -25,8 +25,8 @@ Resultados esperados
 Generar seis gráficos representativos que permitan visualizar distintos aspectos del dataset: 
 - ventas totales por metodo de pago
 - ventas totales por paises
--
--
+- Promedio Ventas-Idioma
+- ventas_totales-membresia
 - gastos totales por edad
 - uso de bytes por tipo de protocolo
 
