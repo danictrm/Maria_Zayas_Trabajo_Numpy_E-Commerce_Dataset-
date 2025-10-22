@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 csv_path = '/content/E-commerce Website Logs.csv'
 
-
+# lo mismo que en el anterior extrae el csv a una array
 data = np.genfromtxt(csv_path, delimiter=',', dtype=str, skip_header=1)
 
 
