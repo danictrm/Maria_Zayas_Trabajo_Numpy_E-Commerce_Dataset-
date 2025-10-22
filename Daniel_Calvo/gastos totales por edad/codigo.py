@@ -17,7 +17,8 @@ x = filtradas[:, 6].astype(float)
 y = filtradas[:, 11].astype(float)
 #guarda en edades_unicas los valores no repetidos en x
 edades_unicas = np.unique(x)
-#guarda en duracion_promedio la media de y(duracion) para cada valor en edades unicas
+#guarda en duracion_promedio la media de y(duracion) para cada valor en edades unicas, primero guardando en x un array con true o false segun si es la misma edad 
+#y despues haciendo la media de los valores que lo cumplen
 duracion_promedio = np.array([y[x == edad].mean() for edad in edades_unicas])
 #determina el tamaño del grafico
 plt.figure(figsize=(8,5))
@@ -26,7 +27,7 @@ plt.plot(edades_unicas, duracion_promedio, color="royalblue", marker="o", linewi
 plt.xlabel("Edad")
 plt.ylabel("Gastos totales")
 plt.title("Gastos promedio por edad")
-# para crear las lineas que marcan el grafico
+# para crear las lineas de cudricula semitransparentes
 plt.grid(True, linestyle="--", alpha=0.5)
 #mostrar grafico
 plt.show()
