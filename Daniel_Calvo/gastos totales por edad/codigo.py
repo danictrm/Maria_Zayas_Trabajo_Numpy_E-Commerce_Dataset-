@@ -7,7 +7,7 @@ data = np.genfromtxt('/content/E-commerce Website Logs.csv', delimiter=',', dtyp
 headers = data[0]
 #guarda el resto de filas de segunda a la ultima
 rows = data[1:]
-#guarda las filas sin "" o -- en filtradas para que no de errores
+#guarda las filas sin "" o -- en filtradas(una lista) para que no de errores
 filtradas = [fila for fila in rows if fila[6] != '--' and fila[6] != ""]
 #convierte filtradas en un array de numpy
 filtradas = np.array(filtradas)
