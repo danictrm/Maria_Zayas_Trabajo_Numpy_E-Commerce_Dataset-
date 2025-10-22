@@ -21,10 +21,12 @@ edades_unicas = np.unique(x)
 duracion_promedio = np.array([y[x == edad].mean() for edad in edades_unicas])
 #determina el tamaño del grafico
 plt.figure(figsize=(8,5))
-#crea el grafico x,y,color,
+#crea el grafico de lineas x,y,color,como se ven las zonas marcadas, anchura lineas
 plt.plot(edades_unicas, duracion_promedio, color="royalblue", marker="o", linewidth=2)
 plt.xlabel("Edad")
 plt.ylabel("Gastos totales")
 plt.title("Gastos promedio por edad")
+# para crear las lineas que marcan el grafico
 plt.grid(True, linestyle="--", alpha=0.5)
+#mostrar grafico
 plt.show()
